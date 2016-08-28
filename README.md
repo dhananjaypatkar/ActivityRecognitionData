@@ -15,7 +15,7 @@ You should create one R script called run_analysis.R that does the following.
 #### Steps to reproduce this project
 - Open and run script data-prep.R (this will download required dependencies and data set)
 - Open the R script run_analysis.R
-- Run the R script run_analysis.r
+- Run the R script run_analysis.R
 
 #### Outputs produced
 
