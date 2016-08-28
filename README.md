@@ -13,10 +13,9 @@ You should create one R script called run_analysis.R that does the following.
 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 #### Steps to reproduce this project
-
-Open the R script run_analysis.r using a text editor.
-follow the instructions in run-analysis.md
-Run the R script run_analysis.r
+- Open and run script data-prep.R (this will download required dependencies and data set)
+- Open the R script run_analysis.R
+- Run the R script run_analysis.r
 
 #### Outputs produced
 
