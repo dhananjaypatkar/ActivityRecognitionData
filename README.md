@@ -22,3 +22,6 @@ You should create one R script called run_analysis.R that does the following.
 
 - Tidy dataset file HumanActivityRecongtnData.txt (tab-delimited text)
 - Refer Code Book.pdf for understanding tidy data 
+
+#### Note
+- Script & analysis was done on windows platform , hence data-prep.R is windows specific and will vary as per OS.

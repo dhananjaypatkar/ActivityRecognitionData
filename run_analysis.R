@@ -101,10 +101,11 @@ data$featAxis <- factor(x %*% y, labels=c(NA, "X", "Y", "Z"))
 
 
 
-Create a tidy data set
 
-Create a data set with the average of each variable for each activity and each subject.
+# Create a data set with the average of each variable for each activity and each subject.
 
 setkey(data, subject, activity, featDomain, featAcceleration, featInstrument, featJerk, featMagnitude, featVariable, featAxis)
 tidyData <- data[, list(count = .N, average = mean(value)), by=key(data)]
+
+# Write to the file
 write.table(tidyData,row.names = F,file = "HumanActivityRecongtnData.txt") 
