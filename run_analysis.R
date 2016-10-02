@@ -77,7 +77,7 @@ data$activity <- factor(data$activityName)
 data$feature <- factor(data$featureName)
 
 
-Seperate features from featureName using grepl on feature column
+#Seperate features from featureName using grepl on feature column
 
 ## Features with 2 categories
 n <- 2
@@ -107,5 +107,13 @@ data$featAxis <- factor(x %*% y, labels=c(NA, "X", "Y", "Z"))
 setkey(data, subject, activity, featDomain, featAcceleration, featInstrument, featJerk, featMagnitude, featVariable, featAxis)
 tidyData <- data[, list(count = .N, average = mean(value)), by=key(data)]
 
+# Make a compact format
+tidyData$variable <- paste(tidyData$featDomain, tidyData$featAcceleration, 
+                      tidyData$featInstrument, tidyData$featJerk,
+                      tidyData$featMagnitude, tidyData$featAxis,tidyData$featVariable,sep = "_" )
+tidyData$variable <- gsub("NA","",tidyData$variable)
+
+tidyData <- subset(tidyData, select = -c(featDomain,featAcceleration,featInstrument
+                                         ,featJerk,featMagnitude,featAxis,featVariable,count))
 # Write to the file
 write.table(tidyData,row.names = F,file = "HumanActivityRecongtnData.txt") 
